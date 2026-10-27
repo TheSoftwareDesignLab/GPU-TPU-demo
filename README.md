@@ -125,6 +125,11 @@ This architectural benchmark was built and validated on the following physical t
 - **Visualization Host (Remote Client):**
   - Any PC or Laptop connected over the local network (or via direct USB-Ethernet bridge at `192.168.55.1`) running a modern web browser with HTML5 Canvas and WebSocket support.
 
+### Physical Hardware Setup
+
+![Hardware Setup](assets/hardware_setup.jpg)
+*Physical testbed: NVIDIA Jetson Nano Developer Kit connected via USB 3.0 to the Google Coral Edge TPU Accelerator, USB Webcam (`/dev/video0`), and USB-Ethernet bridge to the Visualization Host.*
+
 ---
 
 ## 5. Project Structure
