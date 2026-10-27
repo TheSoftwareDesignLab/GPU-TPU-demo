@@ -1,0 +1,4 @@
+theme: jekyll-theme-cayman
+title: "Edge AI: CPU vs. GPU vs. TPU"
+description: "Architectural Case Study & Empirical Benchmark of Distributed Edge Inference (NVIDIA Jetson Nano + Google Coral Edge TPU)"
+markdown: kramdown

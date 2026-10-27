@@ -1,0 +1,44 @@
+version: '2.3'
+
+services:
+  producer:
+    build: ./producer
+    devices:
+      - "/dev/video0:/dev/video0"
+    cpuset: "0"
+    ports:
+      - "5000:5000"
+      - "5555:5555"
+
+  gpu_consumer:
+    build: ./gpu_consumer
+    cpuset: "2"
+    environment:
+      - LD_LIBRARY_PATH=/usr/local/lib
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - producer
+
+  tpu_consumer:
+    build: ./tpu_consumer
+    depends_on:
+      - producer
+    privileged: true
+    volumes:
+      - "/dev/bus/usb:/dev/bus/usb"
+    cpuset: "3"
+
+  cpu_consumer:
+    build: ./cpu_consumer
+    depends_on:
+      - producer
+    cpuset: "1"
+
+  server:
+    build: ./server
+    ports:
+      - "8000:8000"
+      - "5556:5556"
+    depends_on:
+      - producer

@@ -1,0 +1,32 @@
+# Python caches and bytecode artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Operating system files (macOS / Linux / Windows)
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+*~
+
+# Locally compiled inference engines (TensorRT)
+*.engine
+*.plan
+*.cache
+
+# External repositories and build artifacts inside models/
+models/jetson-inference/.git/
+models/jetson-inference/build/
+
+# IDE configuration directories
+.vscode/
+.idea/
+*.swp
+*.swo
